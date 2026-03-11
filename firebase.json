@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "nouveau-monde-237",
+    "site": "nouveau-monde-237-6y7hj",
     "public": "dist",
     "ignore": [
       "firebase.json",
