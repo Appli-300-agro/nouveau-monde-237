@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-secondary-dark font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer utilities {
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .animated-gradient {
+    background: linear-gradient(-45deg, #0056B3, #1e40af, #3b82f6, #60a5fa);
+    background-size: 400% 400%;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 15s ease-in-out infinite;
+  }
+
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background-color: white !important;
+  }
+
+  /* On masque tout sauf le contenu principal du devis si on est sur la page devis */
+  header, footer, .chatbot-button, .cart-drawer {
+    display: none !important;
+  }
+}
