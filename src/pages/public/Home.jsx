@@ -118,28 +118,28 @@ const Home = () => {
 
   const slides = [
     {
-      title: <>L'avenir de <br /> <span className="text-primary-light italic">l'Agriculture</span></>,
-      subtitle: "Semences, Matériel Agricole et Solutions Durables. La référence premium pour les pros et particuliers au Cameroun.",
-      cta1: { label: "Catalogue", link: "/catalogue", icon: true },
-      cta2: { label: "Expertise", link: "/contact" },
-      icon: "☀️",
-      iconLabel: "Solutions Solaires"
+      title: <>Le Nouveau Monde <br /> <span className="text-primary-light italic">Gastronomique</span></>,
+      subtitle: "Pizzas artisanales, burgers gourmets et grillades au feu de bois. Une expérience culinaire unique au cœur de Bonamoussadi.",
+      cta1: { label: "Voir le Menu", link: "/catalogue", icon: true },
+      cta2: { label: "Réserver", link: "/contact" },
+      icon: "🍕",
+      iconLabel: "Cuisine Variée"
     },
     {
-      title: <>Votre Partenaire <br /> <span className="text-primary-light italic">Stratégique</span></>,
-      subtitle: "nouveau.monde.237 accompagne le développement industriel et domestique avec des solutions innovantes et durables.",
-      cta1: { label: "À Propos", link: "/a-propos", icon: false },
-      cta2: { label: "Nos Secteurs", link: "#secteurs", action: scrollToSectors },
-      icon: "🏢",
-      iconLabel: "Expertise Pro"
+      title: <>Divertissement <br /> <span className="text-primary-light italic">& Fun</span></>,
+      subtitle: "Billiard, Mini-golf, Baby-foot et plus. Ne manquez pas nos soirées Karaoke le jeudi et Live Music le week-end.",
+      cta1: { label: "L'Espace Jeux", link: "/a-propos", icon: false },
+      cta2: { label: "Événements", link: "#secteurs", action: scrollToSectors },
+      icon: "🎱",
+      iconLabel: "Salle de Jeux"
     },
     {
-      title: <>Une Équipe <br /> <span className="text-primary-light italic">Dédiée</span></>,
-      subtitle: "Besoin d'un devis personnalisé ou d'une assistance technique ? Nos experts vous répondent sous 24h.",
-      cta1: { label: "Contact", link: "/contact", icon: true },
-      cta2: { label: "WhatsApp", link: "https://wa.me/237600000000" },
-      icon: "📞",
-      iconLabel: "Support 24/7"
+      title: <>Vos Grands <br /> <span className="text-primary-light italic">Événements</span></>,
+      subtitle: "Salle de fête de 500 places pour mariages et conférences. Service traiteur et décoration personnalisée.",
+      cta1: { label: "Devis Événement", link: "/devis", icon: true },
+      cta2: { label: "WhatsApp", link: "https://wa.me/237689812704" },
+      icon: "🎊",
+      iconLabel: "Salle 500 places"
     }
   ];
 
@@ -161,6 +161,14 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-[95vh] flex items-center overflow-hidden text-white bg-secondary-dark">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/fond.jpg" 
+            alt="Le Nouveau Monde Restaurant" 
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-secondary-dark/60 via-transparent to-secondary-dark/80" />
+        </div>
         <ParticlesBackground />
         
         <div className="container mx-auto px-4 relative z-10 py-12 md:py-20">
@@ -261,18 +269,18 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <FeatureCard 
             icon={Truck} 
-            title="Service Express" 
-            description="Une expérience culinaire livrée chez vous ou à savourer sur place. avec calcul en temps réel."
+            title="Livraison & Catering" 
+            description="Savourez nos pizzas à domicile ou au bureau. Service traiteur dédié pour vos événements."
           />
           <FeatureCard 
             icon={ShieldCheck} 
-            title="Paiement Sécurisé" 
-            description="Transactions certifiées via MoMo, OM ou Carte Bancaire. Sécurité maximale."
+            title="L'Espace Fun" 
+            description="Billiard, baby-foot, mini-golf et jeux de société pour petits et grands."
           />
           <FeatureCard 
             icon={Clock} 
-            title="Support Premium" 
-            description="Une équipe dédiée et un assistant IA disponible 24/7 pour vos besoins techniques."
+            title="Agenda Culturel" 
+            description="Jeudi Karaoke, week-ends avec Live Music et grands matchs sur écrans géants."
           />
         </div>
       </AnimatedSection>
@@ -281,11 +289,11 @@ const Home = () => {
       <AnimatedSection className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
             <div className="space-y-4">
-                <h2 className="text-5xl font-heading font-bold text-secondary-dark tracking-tighter">Sélection Vedette</h2>
-                <p className="text-secondary text-lg font-light">Le meilleur de l'innovation technologique et du confort.</p>
+                <h2 className="text-5xl font-heading font-bold text-secondary-dark tracking-tighter">Nos Incontournables</h2>
+                <p className="text-secondary text-lg font-light">Le meilleur de notre savoir-faire culinaire et événementiel.</p>
             </div>
             <Link to="/catalogue" className="group flex items-center text-primary font-bold text-lg hover:text-primary/80 transition-colors">
-                Voir toute la collection 
+                Voir tout le menu 
                 <div className="ml-3 p-2 bg-primary/5 rounded-full group-hover:bg-primary/10 transition-colors">
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -308,18 +316,18 @@ const Home = () => {
       <div ref={sectorsRef}>
         <AnimatedSection className="container mx-auto px-4 bg-slate-50/50 py-16 md:py-24 rounded-[3rem] md:rounded-[4rem] border border-slate-100">
             <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20 space-y-4">
-                <h2 className="text-3xl md:text-5xl font-heading font-bold text-secondary-dark tracking-tighter uppercase">Nos Solutions</h2>
+                <h2 className="text-3xl md:text-5xl font-heading font-bold text-secondary-dark tracking-tighter uppercase">Notre Carte</h2>
                 <div className="h-1 w-16 md:h-1.5 md:w-20 bg-primary mx-auto rounded-full" />
-                <p className="text-secondary text-lg md:text-xl font-light pt-4 px-4">L'art de la gastronomie et du service d'exception.</p>
+                <p className="text-secondary text-lg md:text-xl font-light pt-4 px-4">Une cuisine variée et des espaces de vie uniques.</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                 {CATEGORIES.map((cat, idx) => {
                     const themes = {
-                        'Plats Signatures': { icon: "🥘", color: "from-orange-400 to-red-500" },
-                        'Entrées': { icon: "🥗", color: "from-green-400 to-emerald-600" },
-                        'Boissons': { icon: "🍷", color: "from-blue-400 to-indigo-600" },
-                        'Desserts': { icon: "🍰", color: "from-pink-400 to-rose-500" }
+                        'Pizzas & Burgers': { icon: "🍕", color: "from-orange-400 to-red-500" },
+                        'Grillades & Fast-Food': { icon: "🔥", color: "from-amber-400 to-orange-600" },
+                        'Spécialités & Desserts': { icon: "🥘", color: "from-green-400 to-emerald-600" },
+                        'Espaces & Événements': { icon: "🎱", color: "from-blue-400 to-indigo-600" }
                     };
                     const theme = themes[cat] || { icon: "🍽️", color: "from-slate-400 to-slate-600" };
                     return <CategoryCard key={idx} title={cat} {...theme} />;
@@ -334,8 +342,15 @@ const Home = () => {
           className="relative bg-secondary-dark rounded-[3rem] md:rounded-[4rem] p-10 md:p-32 overflow-hidden text-center shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]"
           whileHover={{ scale: 1.005 }}
         >
+             <div className="absolute inset-0 z-0">
+                <img 
+                    src="/fond.jpg" 
+                    alt="Background" 
+                    className="w-full h-full object-cover opacity-20"
+                />
+             </div>
              <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-purple-500/20"
+                className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-purple-500/20 z-0"
                 animate={{ 
                     background: [
                         "radial-gradient(circle at 0% 0%, rgba(0,86,179,0.15) 0%, transparent 50%)",
@@ -348,10 +363,10 @@ const Home = () => {
              
              <div className="relative z-10 space-y-8 md:space-y-10">
                 <h2 className="text-3xl md:text-7xl font-heading font-bold text-white tracking-tighter leading-tight">
-                    Un projet <span className="text-primary italic">gastronomique</span> ?
+                    Un événement <span className="text-primary italic">gourmand</span> ?
                 </h2>
                 <p className="text-slate-400 text-lg md:text-2xl max-w-2xl mx-auto font-light leading-relaxed">
-                    De la réception privée au banquet d'entreprise, nos chefs conçoivent vos menus de demain.
+                    Anniversaires, repas d'entreprise ou soirées privées, Le Nouveau Monde s'occupe de tout.
                 </p>
                 <div className="flex justify-center pt-6 md:pt-10">
                     <motion.div
@@ -359,9 +374,9 @@ const Home = () => {
                       transition={{ duration: 3, repeat: Infinity }}
                       className="rounded-full w-full sm:w-auto"
                     >
-                        <Link to="/devis">
+                        <Link to="/contact">
                             <Button size="lg" className="rounded-full h-16 md:h-20 px-8 md:px-16 text-lg md:text-2xl bg-primary hover:bg-primary/90 border-none shadow-2xl transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
-                                Demander un devis
+                                Réserver une table
                             </Button>
                         </Link>
                     </motion.div>

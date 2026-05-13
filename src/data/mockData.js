@@ -2,17 +2,17 @@
 // Images sélectionnées pour leur haute qualité et leur pertinence
 
 const CATEGORY_IMAGES = {
-  'Plats Signatures': ['https://images.unsplash.com/photo-1504674900247-0877df9cc836','https://images.unsplash.com/photo-1555939594-58d7cb561ad1','https://images.unsplash.com/photo-1604329760661-e71dc83f8f26'],
-  'Entrées': ['https://images.unsplash.com/photo-1512621776951-a57141f2eefd','https://images.unsplash.com/photo-1540189549336-e6e99c3679fe','https://images.unsplash.com/photo-1546069901-ba9599a7e63c'],
-  'Boissons': ['https://images.unsplash.com/photo-1544145945-f90425340c7e','https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd','https://images.unsplash.com/photo-1497515114629-f71d768fd07c'],
-  'Desserts': ['https://images.unsplash.com/photo-1563729784474-d77dbb933a9e','https://images.unsplash.com/photo-1551024601-bec78aea704b','https://images.unsplash.com/photo-1565958011703-44f9829ba187']
+  'Pizzas & Burgers': ['https://images.unsplash.com/photo-1513104890138-7c749659a591','https://images.unsplash.com/photo-1568901346375-23c9450c58cd','https://images.unsplash.com/photo-1550547660-d9450f859349'],
+  'Grillades & Fast-Food': ['https://images.unsplash.com/photo-1544025162-d76694265947','https://images.unsplash.com/photo-1585238342024-78d387f4a707','https://images.unsplash.com/photo-1555939594-58d7cb561ad1'],
+  'Spécialités & Desserts': ['https://images.unsplash.com/photo-1551183053-bf91a1d81141','https://images.unsplash.com/photo-1551024601-bec78aea704b','https://images.unsplash.com/photo-1565958011703-44f9829ba187'],
+  'Espaces & Événements': ['https://images.unsplash.com/photo-1519167758481-83f550bb49b3','https://images.unsplash.com/photo-1511795409834-ef04bbd61622','https://images.unsplash.com/photo-1527529482837-4698179dc6ce']
 };
 
 const DISH_NAMES = {
-  'Plats Signatures': ['Ndolé Crevettes & Viande', 'Poulet DG Royal', 'Eru & Garri', 'Koki au Piment Douceur', 'Sanga Traditionnel', 'DG de Poisson Braisé'],
-  'Entrées': ['Salade de Fruits de Mer', 'Accras de Morue croustillants', 'Pastels à la viande', 'Nems Exotiques'],
-  'Boissons': ['Jus de Bissap Maison', 'Foléré Gingembre Frais', 'Jus de Baobab Onctueux', 'Punch Exotique'],
-  'Desserts': ['Beignets Haricot Tradition', 'Gateau à la Banane Plantain', 'Mousse de Mangue', 'Tarte Coco']
+  'Pizzas & Burgers': ['Pizza Regina Monde', 'Burger Gourmet 237', 'Pizza Fruits de Mer', 'Tacos XXL Spécial', 'Cheeseburger Deluxe'],
+  'Grillades & Fast-Food': ['Poisson Braisé du Chef', 'Poulet Pané Croustillant', 'Spaghetti Bolognaise', 'Ailes de Poulet BBQ', 'Brochettes de Bœuf'],
+  'Spécialités & Desserts': ['Ndolé Traditionnel', 'Gaufre Chocolat Chantilly', 'Milkshake Vanille-Fraise', 'Glace Artisanale', 'Infusion Maison'],
+  'Espaces & Événements': ['Accès Salle de Jeux', 'Location Salle de Fête', 'Réservation Table Karaoke', 'Forfait Anniversaire', 'Service Traiteur Bureau']
 };
 const sectorKeys = Object.keys(DISH_NAMES);
 
@@ -26,11 +26,16 @@ const generateProducts = () => {
     const imageUrl = images[i % images.length];
     const productName = `${dishBaseName} ${i > names.length ? '#' + i : ''}`.trim();
 
+    let description = `Découvrez notre ${dishBaseName}, une création savoureuse de chez Le Nouveau Monde. Qualité et fraîcheur garanties.`;
+    if (sector === 'Espaces & Événements') {
+      description = `Profitez de nos infrastructures d'exception : Salle de jeux (Billiard, Mini-golf) ou notre salle de réception de 500 places.`;
+    }
+
     products.push({
       id: `prod-${i}`,
       name: productName,
-      description: `Découvrez notre ${dishBaseName}, une solution de la catégorie ${sector} proposée par nouveau.monde.237. Qualité garantie.`,
-      price: 2500 + (Math.floor(Math.random() * 15) * 500),
+      description: description,
+      price: 2500 + (Math.floor(Math.random() * 25) * 500),
       category: sector,
       imageUrl: `${imageUrl}?auto=format&fit=crop&q=80&w=800`,
       stock: Math.floor(Math.random() * 50) + 10,
@@ -45,14 +50,14 @@ export const CATEGORIES = sectorKeys;
 
 export const MOCK_DELIVERERS = [
   { id: 'dev-1', name: 'Abdoulaye', phone: '+237 670 00 00 01', zone: 'Douala (Akwa/Deido)' },
-  { id: 'dev-2', name: 'Samuel', phone: '+237 690 00 00 02', zone: 'Yaoundé (Bastos/Mvan)' },
-  { id: 'dev-3', name: 'Christian', phone: '+237 650 00 00 03', zone: 'Douala (Bonapriso/Logbessou)' }
+  { id: 'dev-2', name: 'Samuel', phone: '+237 690 00 00 02', zone: 'Douala (Bonamoussadi/Makepe)' },
+  { id: 'dev-3', name: 'Christian', phone: '+237 689 812 704', zone: 'Douala (Kotto/Logbessou)' }
 ];
 
 export const MOCK_USERS_LIST = [
   { id: 'u1', name: 'Jean Dupont', email: 'jean.dupont@email.com', role: 'user', status: 'Actif', joinDate: '12/01/2026' },
   { id: 'u2', name: 'Marie Sissoko', email: 'marie.s@email.com', role: 'user', status: 'Actif', joinDate: '15/01/2026' },
-  { id: 'u3', name: 'Aubry Admin', email: 'admin@assequip.cm', role: 'admin', status: 'Actif', joinDate: '01/01/2026' },
+  { id: 'u3', name: 'Aubry Admin', email: 'admin@nouveaumonde237.cm', role: 'admin', status: 'Actif', joinDate: '01/01/2026' },
   { id: 'u4', name: 'Alain Kotto', email: 'alain.k@email.com', role: 'user', status: 'Inactif', joinDate: '20/01/2026' },
   { id: 'u5', name: 'Inès Kamga', email: 'ines.k@email.com', role: 'user', status: 'Actif', joinDate: '02/02/2026' },
 ];

@@ -11,7 +11,7 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-heading font-bold mb-4">Contactez-nous</h1>
           <p className="text-primary-light max-w-xl mx-auto">
-            Une question technique ? Un besoin urgent ? Notre équipe réagit sous 24h pour vous accompagner.
+            Une réservation ? Une commande ou un événement à organiser ? Notre équipe est à votre écoute 7j/7.
           </p>
         </div>
       </section>
@@ -26,8 +26,8 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-secondary-dark mb-1">Téléphone & WhatsApp</h3>
-                <p className="text-sm text-secondary">+237 689 81 27 04</p>
-                <p className="text-xs text-primary font-medium mt-1">Lundi - Samedi : 8h00 - 18h00</p>
+                <p className="text-sm text-secondary">+237 689 812 704</p>
+                <p className="text-xs text-primary font-medium mt-1">Tous les jours : 10h00 - 00h00</p>
               </div>
             </div>
 
@@ -38,7 +38,6 @@ const Contact = () => {
               <div>
                 <h3 className="font-bold text-secondary-dark mb-1">Email</h3>
                 <p className="text-sm text-secondary">contact@nouveaumonde237.cm</p>
-                <p className="text-sm text-secondary">support@nouveaumonde237.cm</p>
               </div>
             </div>
 
@@ -49,8 +48,9 @@ const Contact = () => {
               <div>
                 <h3 className="font-bold text-secondary-dark mb-1">Adresse</h3>
                 <p className="text-sm text-secondary leading-relaxed">
-                  Douala, Cameroun<br />
-                  Siège Social - Zone Industrielle
+                  Bonamoussadi, Douala<br />
+                  En face de l'Ancienne Mairie<br />
+                  Cameroun
                 </p>
               </div>
             </div>

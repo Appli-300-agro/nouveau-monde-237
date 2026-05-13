@@ -15,8 +15,13 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 no-print">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
-          <span className="text-xl md:text-2xl font-heading font-bold text-primary truncate">nouveau.monde.237</span>
+        <Link to="/" className="flex items-center space-x-3 flex-shrink-0">
+          <img 
+            src="/logo.jpg" 
+            alt="Le Nouveau Monde Logo" 
+            className="h-10 w-10 object-contain rounded-lg shadow-sm"
+          />
+          <span className="text-xl md:text-2xl font-heading font-bold text-primary truncate">Le Nouveau Monde</span>
         </Link>
 
         {/* Desktop Navigation */}
